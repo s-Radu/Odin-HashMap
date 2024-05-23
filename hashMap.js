@@ -4,6 +4,13 @@
 // 	throw new Error('Trying to access index out of bond!');
 // }
 
+class LinkedListNode {
+	constructor(key, value) {
+		this.key = key;
+		this.value = value;
+		this.next = null;
+	}
+}
 export default class HashMap {
 	constructor(size = 16) {
 		this._hashMap = new Array(size);
@@ -30,28 +37,38 @@ export default class HashMap {
 	set(key, value) {
 		const index = this._hash(key);
 		this._checkIndex(index);
-		this._hashMap[index] = value;
-	}
-
-	get(key) {
-		const index = this._hash(key);
-		this._checkIndex(index);
-		return this._hashMap[index] !== undefined ? this._hashMap[index] : null;
-	}
-
-	has(key) {
-		const index = this._hash(key);
-		this._checkIndex(index);
-		return this._hashMap[index] !== undefined ? true : false;
-	}
-
-	remove(key) {
-		const index = this._hash(key);
-		this._checkIndex(index);
 		if (!this._hashMap[index]) {
-			return false;
+			this._hashMap[index] = new LinkedListNode(key, value);
+			console.log('Inserted as head.');
+		} else {
+			let node = this._hashMap[index];
+			while (node.next) {
+				node = node.next;
+			}
+			node.next = new LinkedListNode(key.value);
+			console.log('Inserted as the last node.');
 		}
-		delete this._hashMap[index];
-		return true;
 	}
+
+	// get(key) {
+	// 	const index = this._hash(key);
+	// 	this._checkIndex(index);
+	// 	return this._hashMap[index] !== undefined ? this._hashMap[index] : null;
+	// }
+
+	// has(key) {
+	// 	const index = this._hash(key);
+	// 	this._checkIndex(index);
+	// 	return this._hashMap[index] !== undefined ? true : false;
+	// }
+
+	// remove(key) {
+	// 	const index = this._hash(key);
+	// 	this._checkIndex(index);
+	// 	if (!this._hashMap[index]) {
+	// 		return false;
+	// 	}
+	// 	delete this._hashMap[index];
+	// 	return true;
+	// }
 }
