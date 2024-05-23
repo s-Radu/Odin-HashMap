@@ -38,4 +38,10 @@ export default class HashMap {
 		this._checkIndex(index);
 		return this._hashMap[index] !== undefined ? this._hashMap[index] : null;
 	}
+
+	has(key) {
+		const index = this._hash(key);
+		this._checkIndex(index);
+		return this._hashMap[index] !== undefined ? true : false;
+	}
 }
