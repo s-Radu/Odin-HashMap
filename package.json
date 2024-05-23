@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "odin-hashmap",
+  "version": "1.0.0",
+  "description": "This project involves creating a HashMap class with specific methods to handle various operations. The HashMap should only handle keys of type strings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
