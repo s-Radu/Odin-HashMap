@@ -44,4 +44,14 @@ export default class HashMap {
 		this._checkIndex(index);
 		return this._hashMap[index] !== undefined ? true : false;
 	}
+
+	remove(key) {
+		const index = this._hash(key);
+		this._checkIndex(index);
+		if (!this._hashMap[index]) {
+			return false;
+		}
+		delete this._hashMap[index];
+		return true;
+	}
 }
