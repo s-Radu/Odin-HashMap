@@ -19,7 +19,7 @@ export default class HashMap {
 
 	_checkIndex(index) {
 		if (index < 0 || index >= this._length) {
-			throw new Error('Trying to access index out of bond!');
+			throw new Error(`Trying to access index out of bond! at ${index}`);
 		}
 	}
 
@@ -45,16 +45,26 @@ export default class HashMap {
 			while (node.next) {
 				node = node.next;
 			}
-			node.next = new LinkedListNode(key.value);
+			node.next = new LinkedListNode(key, value);
 			console.log('Inserted as the last node.');
 		}
 	}
 
-	// get(key) {
-	// 	const index = this._hash(key);
-	// 	this._checkIndex(index);
-	// 	return this._hashMap[index] !== undefined ? this._hashMap[index] : null;
-	// }
+	get(key) {
+		const index = this._hash(key);
+		this._checkIndex(index);
+		let node = this._hashMap[index];
+
+		while (node) {
+			if (node.key === key) {
+				console.log(node.value);
+				return node.value;
+			}
+			node = node.next;
+		}
+		console.log(null);
+		return null;
+	}
 
 	// has(key) {
 	// 	const index = this._hash(key);
