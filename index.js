@@ -8,3 +8,6 @@ hashMap.set('sarmalE', 'sunt tare bune');
 hashMap.get('sarmalE');
 hashMap.get('sarmale');
 hashMap.get('labirint');
+console.log(hashMap.has('sarmale'));
+hashMap.remove('sarmale');
+hashMap.get('sarmale');

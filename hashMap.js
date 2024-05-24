@@ -73,13 +73,29 @@ export default class HashMap {
 		return this._hashMap[index] !== undefined;
 	}
 
-	// remove(key) {
-	// 	const index = this._hash(key);
-	// 	this._checkIndex(index);
-	// 	if (!this._hashMap[index]) {
-	// 		return false;
-	// 	}
-	// 	delete this._hashMap[index];
-	// 	return true;
-	// }
+	remove(key) {
+		const index = this._hash(key);
+		this._checkIndex(index);
+
+		if (!this._hashMap[index]) {
+			return false;
+		} else {
+			if (this._hashMap[index].key === key) {
+				this._hashMap[index] = this._hashMap[index].next;
+				return true;
+			} else {
+				let previousNode = this._hashMap[index];
+				let node = previousNode.next;
+				while (node) {
+					if (node.key === key) {
+						previousNode.next = node.next;
+						return true;
+					}
+					previousNode = node;
+					node = node.next;
+				}
+			}
+		}
+		return false;
+	}
 }
