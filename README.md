@@ -31,3 +31,8 @@ Remember, a HashMap does not preserve insertion order, so keys and values may ap
 ## Extra Credit
 
 For extra credit, create a HashSet class that behaves the same as a HashMap but only contains keys with no values.
+
+### Where and what.
+
+The classed and methods have been built in [HashMap JavaScript File](hashMap.js)
+And the ussage of the methods are to be used in [Index JavaScript File](index.js)

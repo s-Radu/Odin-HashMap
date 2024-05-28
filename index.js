@@ -1,7 +1,28 @@
 import HashMap, {HashSet} from './hashMap.js';
 
 const hashMap = new HashMap();
+
+//* Methods that can be used for the hashMap:
+//* set(key, value)
+//* get(key)
+//* has(key)
+//* remove(key)
+//* length()
+//* clear()
+//* keys()
+//* values()
+//* entries()
+
 const hashSet = new HashSet();
+
+//* Methods that can be used for the hashSet:
+//* set(key)
+//* get(key)
+//* has(key)
+//* remove(key)
+//* length()
+//* clear()
+//* keys()
 
 hashMap.set('sarmale', 'sunt tare bune');
 hashMap.set('sarmAle', 'sunt tare bune');
