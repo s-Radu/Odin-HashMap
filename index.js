@@ -1,6 +1,7 @@
-import HashMap from './hashMap.js';
+import HashMap, {HashSet} from './hashMap.js';
 
 const hashMap = new HashMap();
+const hashSet = new HashSet();
 
 hashMap.set('sarmale', 'sunt tare bune');
 hashMap.set('sarmAle', 'sunt tare bune');
@@ -21,3 +22,10 @@ console.log(hashMap.entries());
 hashMap.clear();
 console.log(hashMap.length());
 
+console.log('######################');
+
+hashSet.set('test');
+hashSet.set('another test');
+console.log(hashSet.length());
+console.log(hashSet.keys());
+console.log(hashSet.entries());

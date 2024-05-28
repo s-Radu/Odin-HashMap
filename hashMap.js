@@ -173,3 +173,19 @@ export default class HashMap {
 		}
 	}
 }
+
+export class HashSet extends HashMap {
+	set(key) {
+		super.set(key, null);
+	}
+
+	values() {
+		console.log('This is a set, it does not have values.');
+		return null;
+	}
+
+	entries() {
+		console.log('This is a set, it does not have entries.');
+		return null;
+	}
+}
