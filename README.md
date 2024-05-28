@@ -34,5 +34,5 @@ For extra credit, create a HashSet class that behaves the same as a HashMap but 
 
 ### Where and what.
 
-The classed and methods have been built in [HashMap JavaScript File](hashMap.js)
+The classed and methods have been built in [HashMap JavaScript File](hashMap.js)  
 And the ussage of the methods are to be used in [Index JavaScript File](index.js)
