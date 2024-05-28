@@ -110,5 +110,11 @@ export default class HashMap {
 		}
 		return count;
 	}
-    
+
+	clear() {
+		for (let i = 0; i < this._length; i++) {
+			this._hashMap[i] = null;
+		}
+		console.log('Map cleared.');
+	}
 }

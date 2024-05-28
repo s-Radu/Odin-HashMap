@@ -12,3 +12,5 @@ console.log(hashMap.has('sarmale'));
 hashMap.remove('sarmale');
 hashMap.get('sarmale');
 console.log(hashMap.length());
+hashMap.clear();
+console.log(hashMap.length());
