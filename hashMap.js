@@ -98,4 +98,17 @@ export default class HashMap {
 		}
 		return false;
 	}
+
+	length() {
+		let count = 0;
+		for (let i = 0; i < this._length; i++) {
+			let index = this._hashMap[i];
+			while (index) {
+				count++;
+				index = index.next;
+			}
+		}
+		return count;
+	}
+    
 }

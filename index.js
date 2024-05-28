@@ -11,3 +11,4 @@ hashMap.get('labirint');
 console.log(hashMap.has('sarmale'));
 hashMap.remove('sarmale');
 hashMap.get('sarmale');
+console.log(hashMap.length());
