@@ -141,4 +141,16 @@ export default class HashMap {
 		}
 		return array;
 	}
+
+	entries() {
+		let array = [];
+		for (let i = 0; i < this._length; i++) {
+			let index = this._hashMap[i];
+			while (index) {
+				array.push([index.key, index.value]);
+				index = index.next;
+			}
+		}
+		return array;
+	}
 }

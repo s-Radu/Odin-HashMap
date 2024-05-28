@@ -17,5 +17,6 @@ hashMap.get('sarmale');
 console.log(hashMap.length());
 console.log(hashMap.keys());
 console.log(hashMap.values());
+console.log(hashMap.entries());
 hashMap.clear();
 console.log(hashMap.length());
