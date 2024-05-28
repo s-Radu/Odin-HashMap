@@ -20,3 +20,4 @@ console.log(hashMap.values());
 console.log(hashMap.entries());
 hashMap.clear();
 console.log(hashMap.length());
+

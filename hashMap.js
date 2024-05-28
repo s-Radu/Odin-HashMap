@@ -48,6 +48,11 @@ export default class HashMap {
 			node.next = new LinkedListNode(key, value);
 			console.log('Inserted as the last node.');
 		}
+
+		//! Check the load factor
+		if (this.length() / this._length > 0.75) {
+			this.resize();
+		}
 	}
 
 	get(key) {
@@ -152,5 +157,19 @@ export default class HashMap {
 			}
 		}
 		return array;
+	}
+
+	resize() {
+		let oldHashMap = this._hashMap;
+		this._length *= 2; //! Double the size
+		this._hashMap = new Array(this._length);
+
+		for (let i = 0; i < oldHashMap.length; i++) {
+			let node = oldHashMap[i];
+			while (node) {
+				this.set(node.key, node.value); //! Rehash the key value pair into the new array
+				node = node.next;
+			}
+		}
 	}
 }
